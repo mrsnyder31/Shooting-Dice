@@ -32,11 +32,49 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-            List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+            SmackTalkingPlayer Bobbet = new("Go suck an egg")
+            {
+                Name = "Bobbet"
+            };
+            OneHigherPlayer Robbet = new OneHigherPlayer()
+            {
+                Name = "Robbet"
             };
 
-            PlayMany(players);
+            HumanPlayer RealHuman = new()
+            {
+                Name = "Wobbet"
+            };
+
+            CreativeSmackTalkingPlayer SmackSmack = new CreativeSmackTalkingPlayer()
+            {
+                Name = "Sobbet"
+            };
+            SoreLoserPlayer Loser = new SoreLoserPlayer()
+            {
+                Name = "Hobbet"
+            };
+            UpperHalfPlayer Uppies = new UpperHalfPlayer()
+            {
+                Name = "Yooper"
+            };
+            SoreLoserUpperHalfPlayer UppieLoser = new()
+            {
+                Name = "Hoobet"
+            };
+
+            List<Player> players = new List<Player>() {
+                player1, player2, player3, large, Bobbet, Robbet, RealHuman, SmackSmack, Loser, Uppies, UppieLoser
+            };
+
+            try
+            {
+                PlayMany(players);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void PlayMany(List<Player> players)
